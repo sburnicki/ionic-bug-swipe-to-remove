@@ -1,3 +1,13 @@
 page-home {
-
+  .removed {
+    animation: remove-list-item 0.8s forwards;
+  }
+  @keyframes remove-list-item {
+    50% {
+      max-height: 60px;
+    }
+    100% {
+      max-height: 0;
+    }
+  }
 }

@@ -7,8 +7,18 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list>
+        <ion-item-sliding *ngFor="let i of [1, 2, 3, 4]">
+            <ion-item (click)="item.close()">
+                <button>
+                    <h3>Test {{i}}</h3>
+                </button>
+            </ion-item>
+            <ion-item-options side="left" (ionSwipe)="deleteItem($event)">
+                <button ion-button color="danger" expandable>
+                    <ion-icon name="trash"></ion-icon>
+                    </button>
+                </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>
